@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+    <package name="params" namespace="/" extends="struts-default">
+        <action name="paramsAction" class="com.qwm.struts2_3.c_params.ParamsDemoAction">
+            <result name="success">/form1.jsp</result>
+        </action>
+        <action name="params2Action" class="com.qwm.struts2_3.c_params.ParamsDemo2Action">
+            <result name="success">/form2.jsp</result>
+        </action>
+        <action name="params3Action" class="com.qwm.struts2_3.c_params.ParamsDemo3Action">
+            <result name="success">/form3.jsp</result>
+        </action>
+
+        <action name="params4Action" class="com.qwm.struts2_3.c_params.ParamsDemo4Action">
+            <result name="success" type="redirectAction">
+                <param name="actionName">params5Action</param>
+                <param name="namespace">/</param>
+                <!-- 如果添加的参数struts"看不懂".就会作为参数附加重定向的路径之后.
+                    如果参数是动态的.可以使用${}包裹ognl表达式.动态取值
+                 -->
+                <param name="name">${name}</param>
+                <param name="age">19</param>
+            </result>
+        </action>
+
+        <action name="params5Action" class="com.qwm.struts2_3.c_params.ParamsDemo5Action">
+            <result name="success">/showparams.jsp</result>
+        </action>
+    </package>
+</struts>

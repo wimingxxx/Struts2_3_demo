@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+    <!--开启开发模式-->
+    <constant name="struts.devMode" value="true"/>
+    <!--国际化编码配置，可以解决POST请求乱码-->
+    <constant name="struts.i18n.encoding" value="UTF-8"/>
+
+    <!--引入其他sttuts配置文件-->
+    <include file="com\qwm\struts2_3\b_stack\struts.xml"/>
+    <include file="com\qwm\struts2_3\c_params\struts.xml"/>
+    <include file="com\qwm\struts2_3\d_test\struts.xml"/>
+
+</struts>
